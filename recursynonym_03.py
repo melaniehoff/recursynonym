@@ -50,33 +50,33 @@ def getFirstNewWord(totallist, listofsyn):
 			if not getSynlist(aWord):
 				continue
 			#///////////
-		 	newword = aWord
+		newword = aWord
 			# print "new word !!!!!!!!!!!" + newword
-		 	return newword
-		 	break
+		return newword
+		break
 
 
 newword = word
 totalList = []
 totalList.append(word)
 
-print '\n' * 20
-print '    				   ' + word.upper() + '\n'
+print ('\n' * 20)
+print ('    				   ' + word.upper() + '\n')
 for x in range (0,100):
 
 	listofSyn = getSynlist(newword)
 
 	if listofSyn == None:
-		print '\n' * 20
+		print ('\n' * 20)
 		break
 	else:
 		prevword = newword
 		newword = getFirstNewWord(totalList, listofSyn)
 
 		if newword != None:
-			print "				becomes " + newword + '\n',
+			print ("				becomes " + newword + '\n'),
 		else:
-			print '\n' * 15 + "x" + '\n'
+			print ('\n' * 15 + "x" + '\n')
 			break
 
 		totalList.append(newword)
